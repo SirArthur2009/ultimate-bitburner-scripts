@@ -128,7 +128,7 @@ export async function main(ns) {
         }
 
         // --- Update target to richest hackable server ---
-        const hackable = allHosts.filter(s => ns.hasRootAccess(s) && ns.getServerMaxMoney(s) > 0);
+        const hackable = allHosts.filter(s => ns.hasRootAccess(s) && ns.getServerMaxMoney(s) > 0 && ns.getServerRequiredHackingLevel(s) <= ns.getHackingLevel()/2);
         if (hackable.length > 0) {
             hackable.sort((a,b)=>ns.getServerMaxMoney(b)-ns.getServerMaxMoney(a));
             if (hackable[0] !== currentTarget) {
