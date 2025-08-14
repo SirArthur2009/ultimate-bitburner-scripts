@@ -1,7 +1,8 @@
 /** @param {NS} ns **/
 export async function main(ns) {
     const target = ns.args[0] || "n00dles"; // fallback
-    ns.tprint(`🚀 Running hack script on target: ${target}`);
+    const myself = ns.args[1];
+    ns.tprint(`🚀 Running hack script on target: ${target} from ${myself}`);
 
     const moneyThresh = ns.getServerMaxMoney(target) * 0.8;
     const securityThresh = ns.getServerMinSecurityLevel(target) + 5;
