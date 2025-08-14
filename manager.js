@@ -314,7 +314,3 @@ export async function main(ns) {
         await ns.sleep(redeployEveryMs);
     }
 }
-
-        await ns.sleep(redeployEveryMs);
-    }
-}
